@@ -52,8 +52,6 @@ const Main = () => {
             },${search.country || 'US'}&appid=${process.env.REACT_APP_OWM_API}`;
             const response = await fetch(url);
             const data = await response.json();
-            console.log('data: ');
-            console.log(data);
             if (data.cod === '404') {
                 setError({ status: true, message: 'City Not Found' });
                 setSubmit(false);
